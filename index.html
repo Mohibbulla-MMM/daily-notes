@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+
+    </script>
+    <style>
+   
+        /* .text-xl:hover {
+            box-shadow: inset 0 0 10px rgb(54, 139, 150);
+            transition: all .3s;
+        } */
+ 
+        
+
+        .mm-stiky-menu-2 {
+            position: sticky;
+            top: 0px;
+        }
+
+        @media only screen and (min-width:450px) {
+            .mm-stiky-menu-1 {
+            position: sticky;
+            top: 0px;
+        }
+
+        .mm-stiky-menu-2 {
+            position: sticky;
+            top: 42px;
+        }
+ 
+        }
+    </style>
+</head>
+
+<body id="body" class="bg-zinc-800 ">
+    <header class=""></header>
+    <main class="bg-[#94C4FE] md:px-20 px-1 py-8 mx-auto max-w-[800px]">
+        <div>
+            <h1 class="text-3xl text-center font-medium capitalize">Daily <span class="italic">Notes</span>
+            </h1>
+        </div><!-- title container-->
+        <div class="max-w-[600px]  mx-auto mt-5 md:p-5 p-3 bg-blue-200 rounded-xl">
+
+            <!----------------------------------   mentu item -------------------------------- -->
+            <div
+                class=" mm-stiky-menu-1 flex  justify-between items-center gap-2 flex-wrap flex-row  rounded-md border-b-2 border-gray-500 mb-5 px-4 py-2  bg-slate-400">
+                <!-- ---------------------- text decoration container --------------------------  -->
+
+                <i id="bold-id" class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-b"
+                    title="Text Bold"></i>
+                <!-- bold icon-->
+                <i id="italic-id" title="text italic"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-italic"></i>
+                <!-- italic icon-->
+                <i id="underline-id" title="text underline"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-underline"></i>
+                <!-- underline icon-->
+                <i id="highlight-id" title="text highlight"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-highlighter"></i>
+
+
+                <!-- ---------------- text align container -----------------  -->
+
+                <i id="left-id" title="text align left"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-align-left"></i>
+                <!-- left align icon-->
+                <i id="center-id" title="text align center"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-align-center"></i>
+                <!-- center align icon-->
+                <i id="right-id" title="text align right"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-align-right"></i>
+                <!-- right align icon-->
+                <i id="justify-id" title="text align justify"
+                    class=" bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-align-justify"></i>
+                <!--justity align icon-->
+
+                <!-- ------------------font color, size, case container --------------  -->
+
+                <!-- ------------------- font size ---------------------  -->
+                <input id="font-size-id" title="text size"
+                    class=" bg-white rounded-sm  hover:cursor-pointer w-10 border-2 border-gray-500 outline-0 "
+                    placeholder="12" type="number" min="12" max="100">
+
+                <!-- ------------------- text case ---------------------  -->
+                <p id="case-id" title="text case"
+                    class=" hover:cursor-pointer  bg-white rounded-sm px-1 p-0 font-semibold">
+                    aA
+                </p>
+
+                <!-- ------------------- font color ---------------------  -->
+                <input id="color-id" title="text color"
+                    class=" hover:cursor-pointer bg-white rounded-sm   w-8   p-0 border-0" type="color">
+
+
+            </div><!-- text editor option bar-->
+            <!-- ==============================================================================
+                ----------------------------second menu -----------------------------------
+                ============================================================================== -->
+            <div
+                class=" mm-stiky-menu-2 flex gap-2 items-center  flex-row flex-wrap mb-5 bg-slate-400 p-2 px-4 py-[14px] rounded-md border-b-2 border-gray-500">
+
+                <!-- --------------- save button ---------------  -->
+                <button id="save" title="file save"
+                    class=" hidden sm:inline-block bg-white rounded-sm m-0 p-1 hover:cursor-pointer mm-shadow px-3 text-sm">Save</button>
+                <!-- --------------- new line butto ---------------  -->
+                <button id="create-item" title=" create new line "
+                    class=" bg-white rounded-sm  p-1 hover:cursor-pointer mm-shadow px-3 text-sm ">
+                    New Line
+                    <i class=" text-sm bg-white rounded-sm  hover:cursor-pointer fa-solid fa-grip-lines"></i>
+                </button>
+                <!-- --------------- new list butto ---------------  -->
+                <button id="list-create" title="create lixt item "
+                    class=" bg-white rounded-sm  p-1 hover:cursor-pointer mm-shadow px-3 text-sm ">
+                    New List
+                    <i class=" text-sm  bg-white rounded-sm  hover:cursor-pointer fa-solid fa-list-ul"></i>
+                </button>
+
+                <!-- <i id="copy" class=" text-lg px-2 bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-copy">
+                </i> -->
+
+                <button id="border-remove" title="border remove and add "
+                    class=" bg-white rounded-sm  p-1 hover:cursor-pointer mm-shadow px-3 text-sm">
+                    Remove Border
+                    <i class="  text-sm bg-white rounded-sm hover:cursor-pointer fa-solid fa-xmarks-lines">
+                    </i>
+                </button>
+
+
+                <i id="delete" title="current item delete and restor "
+                    class=" text-sm px-2 bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-trash-can">
+                </i>
+
+
+
+                <!-- <i id="border-add"
+                    class=" text-xl px-2 bg-white rounded-sm p-1 hover:cursor-pointer fa-solid fa-grip-lines"></i> -->
+
+                <!-- <i class="fa-solid fa-list-ul"></i> -->
+                <!-- <i class="fa-solid fa-grip-lines"></i> -->
+                <!-- <i class="fa-solid fa-xmarks-lines"></i> -->
+                <!-- <i class="fa-solid fa-trash-can"></i> -->
+            </div>
+            <!-- ------------------------------ text area container ---------------------------  -->
+            <div class="w-full block  m-0 ">
+                <div id="text-area-id" name="" rows="14" class="block w-full h-full bg-white m-0 p-5 border-2 min-h-[300px]  border-black outline-green-700 rounded-0 rounded-md overflow-y-auto
+                ">
+                </div>
+            </div>
+        </div><!-- text editor main container-->
+    </main>
+
+    <!-- <li class="a"> listkdf kj</li> -->
+    <style>
+        .a {
+            padding: 10px;
+            background-color: aquamarine;
+            list-style: disc;
+            font-weight: bold;
+            font-style: italic;
+            text-transform: uppercase;
+            text-transform: lowercase;
+            text-transform: capitalize;
+            /* text-transform: each; */
+        }
+    </style>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
